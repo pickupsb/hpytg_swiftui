@@ -19,7 +19,7 @@ public class NetworkService: ObservableObject {
     static var image : String = "2"
     static var icon : String = "2"
     static var url : String = "2"
-    static func fetchData(appid:String,appsecret:String)async  ->Bool {
+    public static func fetchData(appid:String,appsecret:String)async  ->Bool {
 #if (os(iOS))
 platform = "2"
 #elseif (os(macOS))

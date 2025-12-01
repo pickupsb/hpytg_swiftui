@@ -5,6 +5,10 @@ import PackageDescription
 
 let package = Package(
     name: "hpytg",
+    platforms: [
+        .iOS(.v15),
+        .macOS(.v12)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -18,7 +22,7 @@ let package = Package(
             name: "hpytg"),
         .testTarget(
             name: "hpytgTests",
-            dependencies: ["hpytg"]
+            dependencies: []
         ),
     ]
 )
