@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-public class NetworkService: ObservableObject {
+public class AdUtil: ObservableObject {
     static var data: Data? = nil
     static  var error: Error? = nil
     static var platform : String = "2"
@@ -19,7 +19,10 @@ public class NetworkService: ObservableObject {
     static var image : String = "2"
     static var icon : String = "2"
     static var url : String = "2"
-    public static func fetchData(appid:String,appsecret:String)async  ->Bool {
+    public init (){
+        
+    }
+    public static func show(appid:String,appsecret:String)async  ->Bool {
 #if (os(iOS))
 platform = "2"
 #elseif (os(macOS))
