@@ -45,7 +45,7 @@ struct ContentView: View {
             reader in
             VStack{
                 
-                AsyncImage(url: URL( string:  NetworkService.image)) { phase in
+                AsyncImage(url: URL( string:  AdUtil.image)) { phase in
                     switch phase {
                     case .empty:
                         ProgressView()
@@ -63,13 +63,13 @@ struct ContentView: View {
                     }
                 }
                 
-                Text(NetworkService.description).foregroundColor(.gray).frame(maxHeight: .infinity).padding(EdgeInsets(top:5,leading:5,bottom: 5,trailing: 5))
+                Text(AdUtil.description).foregroundColor(.gray).frame(maxHeight: .infinity).padding(EdgeInsets(top:5,leading:5,bottom: 5,trailing: 5))
                 HStack(){
 //                    GeometryReader{
 //                        reader in
 //
 //                    }
-                    AsyncImage(url: URL( string:  NetworkService.icon)) { phase in
+                    AsyncImage(url: URL( string:  AdUtil.icon)) { phase in
                         switch phase {
                         case .empty:
                             ProgressView()
@@ -90,8 +90,8 @@ struct ContentView: View {
                     
                     
                     VStack(){
-                        Text(NetworkService.title).font(.system(size: 20)).padding(EdgeInsets(top:0,leading:5,bottom: 0,trailing: 0))
-                        Text(NetworkService.subtitle).foregroundColor(.gray).font(.system(size: 16)).padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
+                        Text(AdUtil.title).font(.system(size: 20)).padding(EdgeInsets(top:0,leading:5,bottom: 0,trailing: 0))
+                        Text(AdUtil.subtitle).foregroundColor(.gray).font(.system(size: 16)).padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
                         
                     }
                     Spacer()
@@ -105,7 +105,7 @@ struct ContentView: View {
                                         UIApplication.shared.windows.first?.rootViewController?.present(safariViewController, animated: true)
                                     }
 #elseif (os(macOS))
-                        openURL(URL(string: NetworkService.url)!)
+                        openURL(URL(string: AdUtil.url)!)
 #endif
                         
                     }){Text("访问")}.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))

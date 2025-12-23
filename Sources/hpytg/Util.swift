@@ -10,15 +10,15 @@ import Foundation
 import Combine
 
 public class AdUtil: ObservableObject {
-    static var data: Data? = nil
-    static  var error: Error? = nil
-    static var platform : String = "2"
-    static var title : String = "2"
-    static var subtitle : String = "2"
-    static var description : String = "2"
-    static var image : String = "2"
-    static var icon : String = "2"
-    static var url : String = "2"
+    nonisolated(unsafe) static var data: Data? = nil
+    nonisolated(unsafe) static  var error: Error? = nil
+    nonisolated(unsafe) static var platform : String = "2"
+    nonisolated(unsafe) static var title : String = "2"
+    nonisolated(unsafe) static var subtitle : String = "2"
+    nonisolated(unsafe) static var description : String = "2"
+    nonisolated(unsafe) static var image : String = "2"
+    nonisolated(unsafe) static var icon : String = "2"
+    nonisolated(unsafe) static var url : String = "2"
     public init (){
         
     }
