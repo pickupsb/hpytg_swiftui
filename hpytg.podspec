@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "hpytg"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "A short description of hpytg."
 
   # This description is used to generate tags and improve search results.

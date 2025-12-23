@@ -98,7 +98,7 @@ struct ContentView: View {
 //                    Text("").frame(maxWidth: .infinity)
                     Button(action: {
 #if(os(iOS))
-                        if let url = URL(string: NetworkService.url) {
+                        if let url = URL(string: AdUtil.url) {
                                         // 创建SFSafariViewController实例
                                         let safariViewController = SFSafariViewController(url: url)
                                         // 确保你是在视图控制器的环境中，例如在.onAppear或者.sheet中调用
