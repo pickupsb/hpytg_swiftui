@@ -1,4 +1,10 @@
 //
+//  AdView.swift
+//  hpytg
+//
+//  Created by 雨雪菲菲 on 12/29/25.
+//
+//
 //  Popup.swift
 //  hpytg
 //
@@ -9,7 +15,7 @@ import SwiftUICore
 //import UIKit
 import SwiftUI
 
-public struct Popup: View {
+public struct AdView: View {
 
 @Binding var isPresented: Bool
 //let content: Content
@@ -17,29 +23,30 @@ let dismissOnTapOutside: Bool
     var platform : String = "2"
 private let buttonSize: CGFloat = 24
     
-//    init(isPresented: Binding<Bool>,
-//         dismissOnTapOutside: Bool = true,
-//         @ViewBuilder _ content: () -> Content) {
+//    public init(isPresented: Binding<Bool>
+//         ) {
 //
-//#if (os(iOS))
-//platform = "2"
-//#elseif (os(macOS))
-//platform = "5"
-//#endif
-//
-//        _isPresented = isPresented
-//        self.dismissOnTapOutside = dismissOnTapOutside
-//        self.content = content()
+////#if (os(iOS))
+////platform = "2"
+////#elseif (os(macOS))
+////platform = "5"
+////#endif
+////
+////        _isPresented = isPresented
+////        self.dismissOnTapOutside = dismissOnTapOutside
+////        self.content = content()
 //    }
 
+    
+    
     public var body: some View {
-
+       // @Environment(\.presentationMode) var presentationMode
     GeometryReader { geometry in
         
         ZStack {
 
         Rectangle()
-        .fill(.gray.opacity(0.7))
+        .fill(Color.clear)
         .ignoresSafeArea()
         .onTapGesture {
         if dismissOnTapOutside {
@@ -66,20 +73,20 @@ private let buttonSize: CGFloat = 24
         })
         .font(.system(size: 24, weight: .bold, design: .default))
         .foregroundStyle(Color.gray.opacity(0.7))
-        .padding(.all, 8)
+        .padding(.all, 5)
         }
-        }
+        }.background(Color.clear)
         //.ignoresSafeArea(.all)
         .frame(
         width: geometry.size.width,
         height: geometry.size.height,
         alignment: .center
         )
-        }
+    }.background(Color.clear)
         
         
         
-           }
+    }
     
     
     
@@ -88,10 +95,10 @@ private let buttonSize: CGFloat = 24
 }
 
 
-extension Popup {
+extension AdView {
 //    ,
 //    @ViewBuilder _ content: () -> Content
-    init(isPresented: Binding<Bool>,
+    public init(isPresented: Binding<Bool>,
          dismissOnTapOutside: Bool = true) {
        
         #if (os(iOS))
@@ -105,3 +112,4 @@ extension Popup {
 //        self.content = content()
     }
 }
+

@@ -33,7 +33,7 @@ struct ContentView: View {
 //    @FetchRequest(
 //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
 //        animation: .default)
-//    private var items: FetchedResults<Item>
+
     @State var imgurl = ""
     @State var description = ""
     @State var title = ""
