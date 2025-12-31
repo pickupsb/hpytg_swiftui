@@ -22,7 +22,7 @@ public struct AdView: View {
 let dismissOnTapOutside: Bool
     var platform : String = "2"
 private let buttonSize: CGFloat = 24
-    
+    @State private var screenSize: CGSize = .zero
 //    public init(isPresented: Binding<Bool>
 //         ) {
 //
@@ -58,7 +58,7 @@ private let buttonSize: CGFloat = 24
 
             ContentView()
         .frame(
-            width: platform == "2" ? geometry.size.width*0.8:geometry.size.height*0.4  , height: geometry.size.height*0.8)
+            width: platform == "2" ? geometry.size.width*1:geometry.size.height*0.5  , height: geometry.size.height*1)
         .padding()
         .padding(.top, buttonSize)
         .background(.white)
@@ -70,10 +70,10 @@ private let buttonSize: CGFloat = 24
         }
         }, label: {
         Image(systemName: "xmark.circle")
-        })
+        }).frame(width: 30, height: 30)
         .font(.system(size: 24, weight: .bold, design: .default))
         .foregroundStyle(Color.gray.opacity(0.7))
-        .padding(.all, 5)
+        .padding(.all, 30)
         }
         }.background(Color.clear)
         //.ignoresSafeArea(.all)
@@ -83,9 +83,6 @@ private let buttonSize: CGFloat = 24
         alignment: .center
         )
     }.background(Color.clear)
-        
-        
-        
     }
     
     

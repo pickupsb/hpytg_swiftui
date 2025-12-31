@@ -62,9 +62,9 @@ struct ContentView: View {
                         EmptyView()
                     }
                 }
-                
-                Text(AdUtil.description).foregroundColor(.gray).frame(maxHeight: .infinity).padding(EdgeInsets(top:5,leading:5,bottom: 5,trailing: 5))
-                HStack(){
+                Text(AdUtil.description).foregroundColor(.gray).frame(height: reader.size.height*0.25).padding(EdgeInsets(top:0,leading:5,bottom:0,trailing: 5))
+//                Text(AdUtil.description).foregroundColor(.gray).frame(maxHeight: .infinity).padding(EdgeInsets(top:5,leading:5,bottom: 5,trailing: 5))
+                HStack(alignment: .center){
 //                    GeometryReader{
 //                        reader in
 //
@@ -87,14 +87,14 @@ struct ContentView: View {
                         }
                     }
                     
-                    
-                    
                     VStack(){
                         Text(AdUtil.title).font(.system(size: 20)).padding(EdgeInsets(top:0,leading:5,bottom: 0,trailing: 0))
                         Text(AdUtil.subtitle).foregroundColor(.gray).font(.system(size: 16)).padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
                         
                     }
+                    
                     Spacer()
+                    
 //                    Text("").frame(maxWidth: .infinity)
                     Button(action: {
 #if(os(iOS))
@@ -105,11 +105,13 @@ struct ContentView: View {
                                         UIApplication.shared.windows.first?.rootViewController?.present(safariViewController, animated: true)
                                     }
 #elseif (os(macOS))
+                        
                         openURL(URL(string: AdUtil.url)!)
 #endif
                         
-                    }){Text("访问")}.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                }
+                    }){Text("访问")}.padding(EdgeInsets(top: 3, leading: 5, bottom: 3, trailing: 5))
+//                        .background(.red).foregroundColor(.white)
+                }.frame(height: reader.size.height*0.25).padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
          
                 
                 
